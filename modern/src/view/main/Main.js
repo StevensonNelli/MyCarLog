@@ -6,7 +6,7 @@
  * TODO - Replace this content of this view to suite the needs of your application.
  */
 Ext.define('MyCarLog.view.main.Main', {
-    extend: 'Ext.tab.Panel',
+    extend: 'Ext.Container',
     xtype: 'app-main',
 
     requires: [
@@ -14,48 +14,35 @@ Ext.define('MyCarLog.view.main.Main', {
 
         'MyCarLog.view.main.MainController',
         'MyCarLog.view.main.MainModel',
-        'MyCarLog.view.main.List'
+        'MyCarLog.view.list.CarsList'
     ],
 
     controller: 'main',
     viewModel: 'main',
 
-    defaults: {
-        tab: {
-            iconAlign: 'top'
-        },
-        styleHtmlContent: true
-    },
+    config: {
+        layout: 'fit',
+        cls: 'main',
+        items: [{
+            xtype: 'carslist',
+        }],
 
-    tabBarPosition: 'bottom',
+        listeners: {
+            'initialize': function() {
+                var body = Ext.getBody();
 
-    items: [
-        {
-            title: 'Home',
-            iconCls: 'x-fa fa-home',
-            layout: 'fit',
-            // The following grid shares a store with the classic version's grid as well!
-            items: [{
-                xtype: 'mainlist'
-            }]
-        },{
-            title: 'Users',
-            iconCls: 'x-fa fa-user',
-            bind: {
-                html: '{loremIpsum}'
-            }
-        },{
-            title: 'Groups',
-            iconCls: 'x-fa fa-users',
-            bind: {
-                html: '{loremIpsum}'
-            }
-        },{
-            title: 'Settings',
-            iconCls: 'x-fa fa-cog',
-            bind: {
-                html: '{loremIpsum}'
+                var btn = Ext.widget('button', {
+                    iconCls: 'x-fa fa-plus',
+                    ui: 'round',
+                    itemId: 'fab-add',
+                    floating: true,
+                    cls: 'fab-btn',
+                    renderTo: body
+                });
+
+                // z-index
+                btn.setZIndex(40000);
             }
         }
-    ]
+    }
 });

@@ -1,5 +1,5 @@
 $app-name:  dynamic( 'MyCarLog' );
-$image-search-path: '/var/www/html/Ext6Prjs/mycarlog/build/development/MyCarLog/modern/resources';
+$image-search-path: '/var/www/html/ideasHackathon/MyCarLog.git/build/development/MyCarLog/modern/resources';
 $theme-name:  dynamic( 'theme-triton' );
 $include-ext-abstractcomponent: dynamic(true);;
 $include-ext-abstractmanager: dynamic(true);;
@@ -536,11 +536,16 @@ $include-ext-viewport-viewport: dynamic(true);;
 $include-ext-viewport-wp: dynamic(true);;
 $include-ext-viewport-windowsphone: dynamic(true);;
 $include-mycarlog-application: dynamic(true);;
+$include-mycarlog-store-cars: dynamic(true);;
 $include-mycarlog-store-personnel: dynamic(true);;
+$include-mycarlog-view-list-carslist: dynamic(true);;
+$include-mycarlog-view-list-carslistcontroller: dynamic(true);;
+$include-mycarlog-view-list-carslistmodel: dynamic(true);;
 $include-mycarlog-view-main-list: dynamic(true);;
 $include-mycarlog-view-main-main: dynamic(true);;
 $include-mycarlog-view-main-maincontroller: dynamic(true);;
 $include-mycarlog-view-main-mainmodel: dynamic(true);;
+$include-mycarlog-view-shared-form: dynamic(true);;
 $output-paths: ("path": "../../modern/resources", "shared": "../../resources");
 
 /* ======================== ETC ======================== */

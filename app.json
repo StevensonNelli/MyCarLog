@@ -555,7 +555,7 @@
      */
     
     "builds": {
-        "classic": {
+        /*"classic": {
             "toolkit": "classic",
             
             "theme": "theme-triton",
@@ -563,7 +563,7 @@
             "sass": {
                 // "save": "classic/sass/save.scss"
             }
-        },
+        },*/
 
         "modern": {
             "toolkit": "modern",
@@ -575,6 +575,8 @@
             }
         }
     },
+
+    "toolkit": "modern",
     
 
     /**

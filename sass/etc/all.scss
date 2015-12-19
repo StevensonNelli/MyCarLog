@@ -1,3 +1,78 @@
 /*
  * This is is imported by virtue of "sass.etc" in "app.json".
  */
+
+/* main view */
+.main {
+    background: url('../../resources/images/WelcomeBG.png');
+}
+
+/* cars list view */
+.carlist {
+    .x-container.x-list.x-layout-fit-item.x-sized {
+        background: none;
+    }
+
+    .x-list-item.x-list-item-tpl {
+        background: rgba(255,255,255,0.5);
+    }
+
+    .x-list-item.x-list-item-tpl.x-list-footer-wrap, .x-list-item.x-list-footer-wrap .x-dock-horizontal {
+        border-bottom: 1px solid #BE9E63; 
+    }
+
+    .x-list-item.x-item-selected .x-dock-horizontal, .x-list-item.x-item-selected.x-list-item-tpl {
+        background-color: #E7BE76;
+    }
+
+    .x-toolbar h2 {
+        font-size: 200%;
+        font-weight: 700;
+    }
+
+}
+.x-list-item > .x-innerhtml .car {
+    img {
+      height: 30%;
+      width: 30%;
+      float: left;
+    }
+
+    div.info {
+        float: left;
+        margin-left: 10px;
+    }
+
+    div.info h2 {
+        font-size: 180%;
+        margin-bottom: 5px;
+        /*line-height: 100px;*/
+    }
+}
+
+
+.x-big {
+    .clear {
+        clear: both;
+    }
+    .x-button {
+        color: #F4E5C2;
+        background-color: #6F5B2F;
+    }
+
+    .x-container.x-toolbar.x-stretched.x-dock-item.x-docked-top {
+        /*background-color: rgba(194, 170, 113, 0.82);*/
+        background: none;
+        height: 80px;  
+    }
+
+    /* floating button */
+    .fab-btn {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        font-size: 150%;
+        color: #F4E3BE;
+        border: 1px solid #967D4E;
+    }
+}

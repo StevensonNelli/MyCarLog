@@ -2430,6 +2430,79 @@
     font-weight: 800;
     font-style: italic;
 }
+/* http://localhost:1841/sass/etc/all.scss:6 */
+.main {
+    /*
+ * This is is imported by virtue of "sass.etc" in "app.json".
+ */
+    /* main view */
+    background: url('../../resources/images/WelcomeBG.png');
+}
+/* http://localhost:1841/sass/etc/all.scss:12 */
+.carlist .x-container.x-list.x-layout-fit-item.x-sized {
+    /* cars list view */
+    background: none;
+}
+/* http://localhost:1841/sass/etc/all.scss:16 */
+.carlist .x-list-item.x-list-item-tpl {
+    background: rgba(255, 255, 255, 0.5);
+}
+/* http://localhost:1841/sass/etc/all.scss:20 */
+.carlist .x-list-item.x-list-item-tpl.x-list-footer-wrap,
+.carlist .x-list-item.x-list-footer-wrap .x-dock-horizontal {
+    border-bottom: 1px solid #be9e63;
+}
+/* http://localhost:1841/sass/etc/all.scss:24 */
+.carlist .x-list-item.x-item-selected .x-dock-horizontal,
+.carlist .x-list-item.x-item-selected.x-list-item-tpl {
+    background-color: #e7be76;
+}
+/* http://localhost:1841/sass/etc/all.scss:28 */
+.carlist .x-toolbar h2 {
+    font-size: 200%;
+    font-weight: 700;
+}
+/* http://localhost:1841/sass/etc/all.scss:35 */
+.x-list-item > .x-innerhtml .car img {
+    height: 30%;
+    width: 30%;
+    float: left;
+}
+/* http://localhost:1841/sass/etc/all.scss:41 */
+.x-list-item > .x-innerhtml .car div.info {
+    float: left;
+    margin-left: 10px;
+}
+/* http://localhost:1841/sass/etc/all.scss:46 */
+.x-list-item > .x-innerhtml .car div.info h2 {
+    font-size: 180%;
+    margin-bottom: 5px;
+}
+/* http://localhost:1841/sass/etc/all.scss:55 */
+.x-big .clear {
+    clear: both;
+}
+/* http://localhost:1841/sass/etc/all.scss:58 */
+.x-big .x-button {
+    color: #f4e5c2;
+    background-color: #6f5b2f;
+}
+/* http://localhost:1841/sass/etc/all.scss:63 */
+.x-big .x-container.x-toolbar.x-stretched.x-dock-item.x-docked-top {
+    /*background-color: rgba(194, 170, 113, 0.82);*/
+    background: none;
+    height: 80px;
+}
+/* http://localhost:1841/sass/etc/all.scss:70 */
+.x-big .fab-btn {
+    /* floating button */
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    font-size: 150%;
+    color: #f4e3be;
+    border: 1px solid #967d4e;
+}
 /* http://localhost:1841/ext/packages/core/sass/src/util/SizeMonitor.scss:5 */
 .x-size-monitored {
     /**
