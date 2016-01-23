@@ -1,0 +1,23 @@
+[
+    {
+       "serviceCost": 350,
+       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat.",
+       "date": "7-09-2015",
+       "carId": 1
+   }, {
+       "serviceCost": 600,
+       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat.",
+       "date": "12-01-2016",
+       "carId": 1
+   }, {
+       "serviceCost": 4554,
+       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat.",
+       "date": "7-09-2015",
+       "carId": 2
+   }, {
+       "serviceCost": 980,
+       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat.",
+       "date": "12-01-2016",
+       "carId": 2
+   }
+]
