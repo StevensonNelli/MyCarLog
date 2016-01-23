@@ -1,7 +1,8 @@
 Ext.define('MyCarLog.view.car.CarViewport', {
     extend: 'Ext.TabPanel',
     requires: [ /*'MyCarLog.store.Fuellists'*/ ,
-        'Ext.dataview.List'
+        'Ext.dataview.List',
+	'MyCarLog.view.car.documents.Document'
     ],
     alias: 'widget.carviewport',
     xtype: 'carviewport',
@@ -85,7 +86,10 @@ Ext.define('MyCarLog.view.car.CarViewport', {
             title: 'Documents',
             //iconAlign:'top',
             iconCls: 'x-fa fa-book',
-            html: 'Documents'
+            //html: 'Documents',
+	    items:[{
+               xtype:'document'
+            }]
         }, {
             title: 'Report',
             iconCls: 'x-fa fa-file',

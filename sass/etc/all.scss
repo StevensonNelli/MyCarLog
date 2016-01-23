@@ -255,3 +255,42 @@ span.odometer {
 .x-tab.x-iconalign-top.x-tab-icon.x-layout-box-item.x-stretched {
     color: #868585;
 }
+/*********document styling ********/
+
+.thumblistHeadRow{
+    height: 185px;
+    width: 155px;
+    margin: 10px;
+    float: left;
+    border: 12px solid #B57F3B;
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.98);
+}
+.thumblistHeadRow img {
+    height: 100px;
+    width: 100px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.thumblistHeadRow figure {
+    margin: 0px;
+}
+.thumblistHeadRow figcaption {
+    text-align: center;
+    font-size: 9pt;
+}
+.thumblistHeadRow:hover  {
+    
+    background-color: #F5F6CE;
+}
+.docList{
+      background: rgba(0, 0, 0, 0) !important;
+    border: none !important;
+    height: 0 !important;
+}
+
+/*******End Doc********/
+
+/*******Document Pic View *************************/
+.img-view{
+      background-size: 100% 100% !important;
+}

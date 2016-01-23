@@ -1,0 +1,19 @@
+[
+    {
+        "id": 1,
+        "make": "BMW",
+        "nickname": "Z4",
+        "model": "Z4 Roadster",
+        "fuelType": "diesel",
+        "image": "resources/images/Z4.jpg",
+        "currentMeterReading": 1000
+    }, {
+        "id": 2,
+        "make": "Bugatti",
+        "nickname": "VeyronGS",
+        "model": "Veyron Grand Sport",
+        "fuelType": "petrol",
+        "image": "resources/images/VeyronGS.jpg",
+        "currentMeterReading": 108560
+    }
+]

@@ -21,11 +21,16 @@ Ext.define('MyCarLog.view.main.MainController', {
         'caractionmenu #addFuel': {
             'click': function() {
                 console.log(arguments);
-                debugger;
+                
             },
         }
     },
-
+onDocumentClick:function(list, index, target, record, e, eOpts){
+    var docform = Ext.create('MyCarLog.view.car.documents.DocumentPic',{});
+    var image = docform.down('image').setSrc(record.data.image)
+    Ext.Viewport.add(docform);
+    //docform.showBy(list,"br-cl");
+},
 
     /* Main view */
     onMainInit: function(main) {
