@@ -7,7 +7,7 @@
 
     <title>MyCarLog</title>
 
-    
+    <!--
     <script type="text/javascript">
         var Ext = Ext || {}; // Ext namespace won't be defined yet...
 
@@ -44,11 +44,77 @@
             //};
         };
     </script>
-    
+    -->
     
     <!-- The line below must be kept intact for Sencha Cmd to build your application -->
-    <script id="microloader" data-app="258fff02-83ed-4843-b469-0626db6a1a8a" type="text/javascript" src="bootstrap.js"></script>
+    <script id="microloader" data-app="cb8f4b92-a3c9-4e38-aca1-c3a56e46f739" type="text/javascript" src="bootstrap.js"></script>
 
 </head>
-<body></body>
+<body>
+
+    <!-- templates -->
+    <script type="text/template" id="carslist_itemtpl">
+        <div class="car">
+            <img src="{image}" />
+            <div class="info">
+                <h2>{nickname}</h2>
+                <h5>{make}</h5>
+                <span class="odometer">
+                    <span class="digit">
+                        <span>{mrd1}</span>
+                        <hr />
+                    </span><span class="digit">
+                        <span>{mrd2}</span>
+                        <hr />
+                    </span>
+                    <span class="digit">
+                        <span>{mrd3}</span>
+                        <hr />
+                    </span>
+                    <span class="digit">
+                        <span>{mrd4}</span>
+                        <hr />
+                    </span>
+                    <span class="digit">
+                        <span>{mrd5}</span>
+                        <hr />
+                    </span>
+                    <span class="digit">
+                        <span>{mrd6}</span>
+                        <hr />
+                    </span>
+                </span>        
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="actions"></div>
+    </script>
+    <script type="text/template" id="odometer">
+        <span class="odometer">
+            <span class="digit">
+                <span>{mrd1}</span>
+                <hr />
+            </span><span class="digit">
+                <span>{mrd2}</span>
+                <hr />
+            </span>
+            <span class="digit">
+                <span>{mrd3}</span>
+                <hr />
+            </span>
+            <span class="digit">
+                <span>{mrd4}</span>
+                <hr />
+            </span>
+            <span class="digit">
+                <span>{mrd5}</span>
+                <hr />
+            </span>
+            <span class="digit">
+                <span>{mrd6}</span>
+                <hr />
+            </span>
+        </span>
+    </script>
+</body>
 </html>

@@ -2,47 +2,80 @@
  * This is is imported by virtue of "sass.etc" in "app.json".
  */
 
+
 /* main view */
+
 .main {
-    background: url('../../resources/images/WelcomeBG.png');
+    background: url('images/WelcomeBG.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 
+
+/* backdrop mask */
+
+.actionmenu.x-sheet-action + .x-mask {
+    opacity: 0.7;
+    background-color: #000;
+}
+
+.actionmenu.x-sheet-action {
+  background-color: rgba(0, 0, 0, 0);
+  // background: none;
+  border: none;
+  margin-bottom: 62px;
+  padding: 1.6em;
+
+  .x-button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+  }
+
+  .x-button-pressing {
+    background-color: #d6d6d6;
+  }
+
+  .x-button-label {
+    text-align: right;
+  }
+}
+
+
 /* cars list view */
+
 .carlist {
     .x-container.x-list.x-layout-fit-item.x-sized {
         background: none;
     }
-
     .x-list-item.x-list-item-tpl {
-        background: rgba(255,255,255,0.5);
+        background: rgba(255, 255, 255, 0.3);
     }
-
-    .x-list-item.x-list-item-tpl.x-list-footer-wrap, .x-list-item.x-list-footer-wrap .x-dock-horizontal {
-        border-bottom: 1px solid #BE9E63; 
+    .x-list-item.x-list-item-tpl.x-list-footer-wrap,
+    .x-list-item.x-list-footer-wrap .x-dock-horizontal {
+        border-bottom: 1px solid #BE9E63;
     }
-
-    .x-list-item.x-item-selected .x-dock-horizontal, .x-list-item.x-item-selected.x-list-item-tpl {
-        background-color: #E7BE76;
+    .x-list-item.x-item-selected .x-dock-horizontal,
+    .x-list-item.x-item-selected.x-list-item-tpl {
+        background-color: #E9CB87;
     }
-
     .x-toolbar h2 {
-        font-size: 200%;
-        font-weight: 700;
+        font-size: 250%;
+        font-weight: 400;
     }
-
 }
+
 .x-list-item > .x-innerhtml .car {
     img {
-      height: 30%;
-      width: 30%;
-      float: left;
+        height: 80px;
+        // width: 30%;
+        float: left;
     }
-
     div.info {
         float: left;
         margin-left: 10px;
     }
-
     div.info h2 {
         font-size: 180%;
         margin-bottom: 5px;
@@ -51,28 +84,174 @@
 }
 
 
+/* odometer styling */
+
+span.odometer {
+    display: block;
+    float: left;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    -webkit-box-reflect: below -15px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(60%, transparent), to(rgba(255, 255, 255, 0.3)));
+    span.digit {
+        background: #161616;
+        background: #3F3F3F;
+        /* Old browsers */
+        background: linear-gradient(bottom, #0A0A0A 0%, #2B2B2B 50%, #3F3F3F 100%);
+        background: -o-linear-gradient(bottom, #0A0A0A 0%, #2B2B2B 50%, #3F3F3F 100%);
+        background: -moz-linear-gradient(bottom, #0A0A0A 0%, #2B2B2B 50%, #3F3F3F 100%);
+        background: -webkit-linear-gradient(bottom, #0A0A0A 0%, #2B2B2B 50%, #3F3F3F 100%);
+        background: -ms-linear-gradient(bottom, #0A0A0A 0%, #2B2B2B 50%, #3F3F3F 100%);
+        background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #0A0A0A), color-stop(0.5, #2B2B2B), color-stop(1, #3F3F3F));
+        filter: progid: DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FF0A0A0A', endColorstr='#FF3F3F3F');
+        /* IE6 & IE7 */
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FF0A0A0A', endColorstr='#FF3F3F3F')";
+        /* IE8 */
+        zoom: 1;
+        -webkit-border-radius: 0.1em;
+        -moz-border-radius: 0.1em;
+        border-radius: 0.1em;
+        background-clip: border;
+        color: #FFF;
+        display: block;
+        float: left;
+        height: 30px;
+        margin: 0 1px;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        text-align: center;
+        width: 20px;
+    }
+    span.digit span {
+        line-height: 30px;
+        position: relative;
+        top: 0;
+    }
+    span.digit hr {
+        border-color: transparent;
+        -webkit-box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.5);
+        box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.5);
+        height: 3px;
+        margin: -2px 0 0 0;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        z-index: 1;
+    }
+    span.separator {
+        display: block;
+        float: left;
+        font-family: Georgia, serif;
+        font-size: 0.5em;
+        position: relative;
+        top: 0.5em;
+    }
+    span.separator hr {
+        display: none;
+    }
+}
+
 .x-big {
     .clear {
         clear: both;
     }
     .x-button {
         color: #F4E5C2;
-        background-color: #6F5B2F;
+        background-color: #57482B;
+        border: none;
     }
-
     .x-container.x-toolbar.x-stretched.x-dock-item.x-docked-top {
         /*background-color: rgba(194, 170, 113, 0.82);*/
         background: none;
-        height: 80px;  
+        height: 60px;
     }
-
     /* floating button */
     .fab-btn {
         position: fixed;
         bottom: 15px;
         right: 15px;
-        font-size: 150%;
+        // font-size: 150%;
         color: #F4E3BE;
         border: 1px solid #967D4E;
+        // box-shadow: 0px 0px 9px rgba(99, 74, 2, 0.98);
+        box-shadow: 1px 2px 15px 0px rgba(99, 74, 2, 0.6), 0px -1px 15px 0px rgba(99, 74, 2, 0.5)
     }
+    .fab-btn.x-button .x-button-icon {
+        width: auto;
+    }
+    .fab-back {
+        right: 85px;
+    }
+    .fab.x-button {
+        padding: 0;
+    }
+}
+
+.fab-plain.x-button {
+    color: #57482B;
+    // height: 
+}
+
+.x-button.fab-plain .x-button-icon {
+    line-height: 0.7em;
+}
+
+.fab-plain.x-button-plain.x-button-pressing {
+    color: #000;
+    background: #CDB076;
+    border-radius: 50px;
+}
+
+.welcome-cls {
+    // background-image: url('images/WelcomeBG.png');
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.logo-cls {
+    background-color: yellow;
+}
+
+.image-cls {
+    height: 180px;
+    margin-top: 30%;
+}
+
+.welcometext-cls {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 600;
+    font-size: 18px;
+    margin-left: 20%;
+}
+
+.mytext {
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 600;
+    font-size: 18px;
+    margin-left: 30px;
+}
+
+.welcomebt-cls .x-button-label {
+    font-size: 20px;
+    color: #4C3D1D;
+    font-weight: 600;
+}
+
+.x-tabbar {
+    background-color: #fff !important;
+}
+
+.x-tab.x-tab-active {
+    color: #806503 !important;
+}
+
+.myfuellist {}
+
+.x-tab.x-iconalign-top.x-tab-icon.x-layout-box-item.x-stretched {
+    color: #868585;
 }

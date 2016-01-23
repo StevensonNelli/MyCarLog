@@ -46,10 +46,16 @@
      * The toolkit to use. Select either "classic" or "modern".
      */
     
+    "toolkit": "modern",
+    
     
     /**
      * The name of the theme for this application.
      */
+    
+    
+    "theme": "theme-triton",
+    
     
     /**
      * The list of required packages (with optional versions; default is "latest").
@@ -61,7 +67,8 @@
      *      ]
      */
     "requires": [
-        "font-awesome"
+        "font-awesome",
+        "charts"
     ],
 
     /**
@@ -98,6 +105,8 @@
          *
          */
          
+        // "save": "sass/save.scss",
+        
         /**
          * Comma-separated list of files or folders containing extra Sass. These
          * files are automatically included in the Sass compilation. By default this
@@ -369,8 +378,6 @@
     "bootstrap": {
         "base": "${app.dir}",
         
-        "manifest": "${build.id}.json",
-        
         "microloader": "bootstrap.js",
         "css": "bootstrap.css"
     },
@@ -418,15 +425,8 @@
     
     "output": {
         "base": "${workspace.build.dir}/${build.environment}/${app.name}",
-        "page": "index.html",
-        "manifest": "${build.id}.json",
-        "js": "${build.id}/app.js",
         "appCache": {
             "enable": false
-        },
-        "resources": {
-            "path": "${build.id}/resources",
-            "shared": "resources"
         }
     },
     
@@ -449,7 +449,7 @@
     
     "cache": {
         "enable": false,
-        "deltas": "${build.id}/deltas"
+        "deltas": true
     },
     
 
@@ -507,9 +507,29 @@
      * deltas between updates.
      */
     
-    "archivePath": "archive/${build.id}",
+    "archivePath": "archive",
     
 
+
+    /**
+     * Additional resources used during theme slicing operations
+     */
+    "slicer": {
+        "js": [
+            {
+                "path": "sass/example/custom.js",
+                "isWidgetManifest": true
+            }
+        ],
+        "output": {
+            "appCache": {
+                "enable": false
+            }
+        },
+        "cache": {
+            "enable": false
+        }
+    },
 
     /**
      * The space config object is used by the "sencha app publish" command to publish
@@ -554,34 +574,10 @@
      *
      */
     
-    "builds": {
-        /*"classic": {
-            "toolkit": "classic",
-            
-            "theme": "theme-triton",
-            
-            "sass": {
-                // "save": "classic/sass/save.scss"
-            }
-        },*/
-
-        "modern": {
-            "toolkit": "modern",
-            
-            "theme": "theme-triton",
-            
-            "sass": {
-                // "save": "modern/sass/save.scss"
-            }
-        }
-    },
-
-    "toolkit": "modern",
-    
 
     /**
      * Uniquely generated id for this application, used as prefix for localStorage keys.
      * Normally you should never change this value.
      */
-    "id": "258fff02-83ed-4843-b469-0626db6a1a8a"
+    "id": "cb8f4b92-a3c9-4e38-aca1-c3a56e46f739"
 }

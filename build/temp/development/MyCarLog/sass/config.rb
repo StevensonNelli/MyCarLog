@@ -1,2 +1,2 @@
 Compass.add_project_configuration('../../../../../sass/config.rb')
-cache_path = '/var/www/html/ideasHackathon/MyCarLog.git/build/.sass-cache'
+cache_path = '/var/www/html/ideasHackathon/NEW/MyCarLog/build/.sass-cache'
