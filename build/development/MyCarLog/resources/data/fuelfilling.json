@@ -1,0 +1,15 @@
+[
+    {
+        "fillCost": 1000,
+        "litres": 15.46,
+        "reading": 158658,
+        "date": "12-01-2016",
+        "cardId": 1
+    }, {
+        "fillCost": 500,
+        "litres": 7.9,
+        "reading": 458985,
+        "date": "23-01-2016",
+        "cardId": 2
+    }
+]

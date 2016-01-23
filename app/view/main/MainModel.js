@@ -8,7 +8,8 @@ Ext.define('MyCarLog.view.main.MainModel', {
 
     data: {
         name: 'MyCarLog',
-        carSelected: null
+        carSelected: null,
+        filter: null
     }
 
     //TODO - add data, formulas and/or methods to support your view

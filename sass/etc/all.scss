@@ -22,44 +22,48 @@
 }
 
 .actionmenu.x-sheet-action {
-  background-color: rgba(0, 0, 0, 0);
-  // background: none;
-  border: none;
-  margin-bottom: 62px;
-  padding: 1.6em;
-
-  .x-button {
     background-color: rgba(0, 0, 0, 0);
+    // background: none;
     border: none;
-  }
-
-  .x-button-pressing {
-    background-color: #d6d6d6;
-  }
-
-  .x-button-label {
-    text-align: right;
-  }
+    margin-bottom: 62px;
+    padding: 1.6em;
+    .x-button {
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+    }
+    .x-button-pressing {
+        background-color: #d6d6d6;
+    }
+    .x-button-label {
+        text-align: right;
+    }
 }
 
 
-/* cars list view */
+/* common list styling */
 
+.x-container.x-list.x-layout-fit-item.x-sized {
+    background: none;
+}
+
+.x-list-item.x-list-item-tpl {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.x-list-item.x-list-item-tpl.x-list-footer-wrap,
+.x-list-item.x-list-footer-wrap .x-dock-horizontal {
+    border-bottom: 1px solid #BE9E63;
+}
+
+.x-list-item.x-item-selected .x-dock-horizontal,
+.x-list-item.x-item-selected.x-list-item-tpl {
+    background-color: #E9CB87;
+}
+
+/**
+ * carslist view 
+ */
 .carlist {
-    .x-container.x-list.x-layout-fit-item.x-sized {
-        background: none;
-    }
-    .x-list-item.x-list-item-tpl {
-        background: rgba(255, 255, 255, 0.3);
-    }
-    .x-list-item.x-list-item-tpl.x-list-footer-wrap,
-    .x-list-item.x-list-footer-wrap .x-dock-horizontal {
-        border-bottom: 1px solid #BE9E63;
-    }
-    .x-list-item.x-item-selected .x-dock-horizontal,
-    .x-list-item.x-item-selected.x-list-item-tpl {
-        background-color: #E9CB87;
-    }
     .x-toolbar h2 {
         font-size: 250%;
         font-weight: 400;
@@ -254,6 +258,89 @@ span.odometer {
 
 .x-tab.x-iconalign-top.x-tab-icon.x-layout-box-item.x-stretched {
     color: #868585;
+}
+
+
+/**
+ * Fuel list styling
+ */
+
+div.fuel-list-item {
+    display: inline-block;
+    width: 100%;
+    /* hegiht:  */
+    margin: 5px;
+    font-size: 20px;
+    /* height: 0; */
+    p {
+        margin: 0;
+        /* display: inline; */
+        padding: 0;
+    }
+    span {
+        display: block;
+        text-align: center;
+        width: 100%;
+        margin: 10px auto;
+    }
+    div {
+        display: inline-block;
+        height: 80px;
+        margin: 2px;
+        float: left;
+        /* width: 80px; */
+        // background: #fff;
+        color: black;
+        box-sizing: border-box;
+    }
+}
+
+div.fuel-list-item div[data-type=cost] {
+    width: 90px;
+    // height: 80px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
+    padding: 10px 0px 10px 0px;
+    // box-sizing: border-box;
+    p {
+        font-size: 1.8em;
+        text-align: center;
+        font-weight: bold;
+        margin: 5px 0;
+    }
+}
+
+div.fuel-list-item div[data-type=rest] {
+    display: block;
+    // height: 80px;
+    padding: 10px 5px 10px 8px;
+    // box-sizing: border-box;
+    p {
+        /* height: 100%; */
+        vertical-align: middle;
+    }
+}
+
+
+/* ### fuellist ends ### */
+
+
+/**
+ * CarViewport styling
+ */
+.x-tab.x-tab-active {
+  color: #000000 !important;
+  /* box-shadow: 0px 3px 0px; */
+  border: none;
+  border-bottom: 2px solid;
+  background-color: rgba(0,0,0,0) !important;
+  border-color: #000 !important;
+}
+.x-tab.x-iconalign-top.x-tab-icon.x-layout-box-item.x-stretched {
+    color: #000 !important;
+}
+
+.x-tabbar {
+  background-color: rgba(0,0,0,0) !important;
 }
 /*********document styling ********/
 

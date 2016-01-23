@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "doctitle": "Driving Licence",
+        "image": "resources/images/doc1.jpg",
+        "date": "10-02-2001"
+    }, {
+        "id": 2,
+        "doctitle": "Registration Card",
+        "image": "resources/images/doc2.jpg",
+        "date": "10-01-2001"
+    }, {
+        "id": 3,
+        "doctitle": "Insurance Card",
+        "image": "resources/images/doc3.jpg",
+        "date": "12-01-2001"
+    }, {
+        "id": 4,
+        "doctitle": "Fuel Bill",
+        "image": "resources/images/doc4.jpg",
+        "date": "10-05-2001"
+    }
+]

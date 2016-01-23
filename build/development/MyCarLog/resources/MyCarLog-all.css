@@ -2455,59 +2455,59 @@
     margin-bottom: 62px;
     padding: 1.6em;
 }
-/* http://localhost:1841/sass/etc/all.scss:31 */
+/* http://localhost:1841/sass/etc/all.scss:30 */
 .actionmenu.x-sheet-action .x-button {
     background-color: transparent;
     border: none;
 }
-/* http://localhost:1841/sass/etc/all.scss:36 */
+/* http://localhost:1841/sass/etc/all.scss:34 */
 .actionmenu.x-sheet-action .x-button-pressing {
     background-color: #d6d6d6;
 }
-/* http://localhost:1841/sass/etc/all.scss:40 */
+/* http://localhost:1841/sass/etc/all.scss:37 */
 .actionmenu.x-sheet-action .x-button-label {
     text-align: right;
 }
-/* http://localhost:1841/sass/etc/all.scss:49 */
-.carlist .x-container.x-list.x-layout-fit-item.x-sized {
-    /* cars list view */
+/* http://localhost:1841/sass/etc/all.scss:45 */
+.x-container.x-list.x-layout-fit-item.x-sized {
+    /* common list styling */
     background: none;
 }
-/* http://localhost:1841/sass/etc/all.scss:52 */
-.carlist .x-list-item.x-list-item-tpl {
+/* http://localhost:1841/sass/etc/all.scss:49 */
+.x-list-item.x-list-item-tpl {
     background: rgba(255, 255, 255, 0.3);
 }
-/* http://localhost:1841/sass/etc/all.scss:55 */
-.carlist .x-list-item.x-list-item-tpl.x-list-footer-wrap,
-.carlist .x-list-item.x-list-footer-wrap .x-dock-horizontal {
+/* http://localhost:1841/sass/etc/all.scss:53 */
+.x-list-item.x-list-item-tpl.x-list-footer-wrap,
+.x-list-item.x-list-footer-wrap .x-dock-horizontal {
     border-bottom: 1px solid #be9e63;
 }
-/* http://localhost:1841/sass/etc/all.scss:59 */
-.carlist .x-list-item.x-item-selected .x-dock-horizontal,
-.carlist .x-list-item.x-item-selected.x-list-item-tpl {
+/* http://localhost:1841/sass/etc/all.scss:58 */
+.x-list-item.x-item-selected .x-dock-horizontal,
+.x-list-item.x-item-selected.x-list-item-tpl {
     background-color: #e9cb87;
 }
-/* http://localhost:1841/sass/etc/all.scss:63 */
+/* http://localhost:1841/sass/etc/all.scss:67 */
 .carlist .x-toolbar h2 {
     font-size: 250%;
     font-weight: 400;
 }
-/* http://localhost:1841/sass/etc/all.scss:70 */
+/* http://localhost:1841/sass/etc/all.scss:74 */
 .x-list-item > .x-innerhtml .car img {
     height: 80px;
     float: left;
 }
-/* http://localhost:1841/sass/etc/all.scss:75 */
+/* http://localhost:1841/sass/etc/all.scss:79 */
 .x-list-item > .x-innerhtml .car div.info {
     float: left;
     margin-left: 10px;
 }
-/* http://localhost:1841/sass/etc/all.scss:79 */
+/* http://localhost:1841/sass/etc/all.scss:83 */
 .x-list-item > .x-innerhtml .car div.info h2 {
     font-size: 180%;
     margin-bottom: 5px;
 }
-/* http://localhost:1841/sass/etc/all.scss:94 */
+/* http://localhost:1841/sass/etc/all.scss:98 */
 span.odometer {
     display: block;
     float: left;
@@ -2515,7 +2515,7 @@ span.odometer {
     line-height: 1.2em;
     -webkit-box-reflect: below -15px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(60%, transparent), to(rgba(255, 255, 255, 0.3)));
 }
-/* http://localhost:1841/sass/etc/all.scss:100 */
+/* http://localhost:1841/sass/etc/all.scss:104 */
 span.odometer span.digit {
     background: #161616;
     background: #3f3f3f;
@@ -2546,13 +2546,13 @@ span.odometer span.digit {
     text-align: center;
     width: 20px;
 }
-/* http://localhost:1841/sass/etc/all.scss:130 */
+/* http://localhost:1841/sass/etc/all.scss:134 */
 span.odometer span.digit span {
     line-height: 30px;
     position: relative;
     top: 0;
 }
-/* http://localhost:1841/sass/etc/all.scss:135 */
+/* http://localhost:1841/sass/etc/all.scss:139 */
 span.odometer span.digit hr {
     border-color: transparent;
     -webkit-box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.5);
@@ -2565,7 +2565,7 @@ span.odometer span.digit hr {
     width: 100%;
     z-index: 1;
 }
-/* http://localhost:1841/sass/etc/all.scss:147 */
+/* http://localhost:1841/sass/etc/all.scss:151 */
 span.odometer span.separator {
     display: block;
     float: left;
@@ -2574,27 +2574,27 @@ span.odometer span.separator {
     position: relative;
     top: 0.5em;
 }
-/* http://localhost:1841/sass/etc/all.scss:155 */
+/* http://localhost:1841/sass/etc/all.scss:159 */
 span.odometer span.separator hr {
     display: none;
 }
-/* http://localhost:1841/sass/etc/all.scss:161 */
+/* http://localhost:1841/sass/etc/all.scss:165 */
 .x-big .clear {
     clear: both;
 }
-/* http://localhost:1841/sass/etc/all.scss:164 */
+/* http://localhost:1841/sass/etc/all.scss:168 */
 .x-big .x-button {
     color: #f4e5c2;
     background-color: #57482b;
     border: none;
 }
-/* http://localhost:1841/sass/etc/all.scss:169 */
+/* http://localhost:1841/sass/etc/all.scss:173 */
 .x-big .x-container.x-toolbar.x-stretched.x-dock-item.x-docked-top {
     /*background-color: rgba(194, 170, 113, 0.82);*/
     background: none;
     height: 60px;
 }
-/* http://localhost:1841/sass/etc/all.scss:175 */
+/* http://localhost:1841/sass/etc/all.scss:179 */
 .x-big .fab-btn {
     /* floating button */
     position: fixed;
@@ -2604,49 +2604,49 @@ span.odometer span.separator hr {
     border: 1px solid #967d4e;
     box-shadow: 1px 2px 15px 0px rgba(99, 74, 2, 0.6), 0px -1px 15px 0px rgba(99, 74, 2, 0.5);
 }
-/* http://localhost:1841/sass/etc/all.scss:185 */
+/* http://localhost:1841/sass/etc/all.scss:189 */
 .x-big .fab-btn.x-button .x-button-icon {
     width: auto;
 }
-/* http://localhost:1841/sass/etc/all.scss:188 */
+/* http://localhost:1841/sass/etc/all.scss:192 */
 .x-big .fab-back {
     right: 85px;
 }
-/* http://localhost:1841/sass/etc/all.scss:191 */
+/* http://localhost:1841/sass/etc/all.scss:195 */
 .x-big .fab.x-button {
     padding: 0;
 }
-/* http://localhost:1841/sass/etc/all.scss:196 */
+/* http://localhost:1841/sass/etc/all.scss:200 */
 .fab-plain.x-button {
     color: #57482b;
 }
-/* http://localhost:1841/sass/etc/all.scss:201 */
+/* http://localhost:1841/sass/etc/all.scss:205 */
 .x-button.fab-plain .x-button-icon {
     line-height: 0.7em;
 }
-/* http://localhost:1841/sass/etc/all.scss:205 */
+/* http://localhost:1841/sass/etc/all.scss:209 */
 .fab-plain.x-button-plain.x-button-pressing {
     color: #000;
     background: #cdb076;
     border-radius: 50px;
 }
-/* http://localhost:1841/sass/etc/all.scss:211 */
+/* http://localhost:1841/sass/etc/all.scss:215 */
 .welcome-cls {
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
-/* http://localhost:1841/sass/etc/all.scss:219 */
+/* http://localhost:1841/sass/etc/all.scss:223 */
 .logo-cls {
     background-color: yellow;
 }
-/* http://localhost:1841/sass/etc/all.scss:223 */
+/* http://localhost:1841/sass/etc/all.scss:227 */
 .image-cls {
     height: 180px;
     margin-top: 30%;
 }
-/* http://localhost:1841/sass/etc/all.scss:228 */
+/* http://localhost:1841/sass/etc/all.scss:232 */
 .welcometext-cls {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -2655,30 +2655,149 @@ span.odometer span.separator hr {
     font-size: 18px;
     margin-left: 20%;
 }
-/* http://localhost:1841/sass/etc/all.scss:237 */
+/* http://localhost:1841/sass/etc/all.scss:241 */
 .mytext {
     font-family: 'Kaushan Script', cursive;
     font-weight: 600;
     font-size: 18px;
     margin-left: 30px;
 }
-/* http://localhost:1841/sass/etc/all.scss:244 */
+/* http://localhost:1841/sass/etc/all.scss:248 */
 .welcomebt-cls .x-button-label {
     font-size: 20px;
     color: #4c3d1d;
     font-weight: 600;
 }
-/* http://localhost:1841/sass/etc/all.scss:250 */
+/* http://localhost:1841/sass/etc/all.scss:254 */
 .x-tabbar {
     background-color: #fff !important;
 }
-/* http://localhost:1841/sass/etc/all.scss:254 */
+/* http://localhost:1841/sass/etc/all.scss:258 */
 .x-tab.x-tab-active {
     color: #806503 !important;
 }
-/* http://localhost:1841/sass/etc/all.scss:260 */
+/* http://localhost:1841/sass/etc/all.scss:264 */
 .x-tab.x-iconalign-top.x-tab-icon.x-layout-box-item.x-stretched {
     color: #868585;
+}
+/* http://localhost:1841/sass/etc/all.scss:280 */
+div.fuel-list-item {
+    display: inline-block;
+    width: 100%;
+    /* hegiht:  */
+    margin: 5px;
+    font-size: 20px;
+}
+/* http://localhost:1841/sass/etc/all.scss:287 */
+
+/* height: 0; */
+/* height: 0; */div.fuel-list-item p {
+    margin: 0;
+    /* display: inline; */
+    padding: 0;
+}
+/* http://localhost:1841/sass/etc/all.scss:292 */
+div.fuel-list-item span {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 10px auto;
+}
+/* http://localhost:1841/sass/etc/all.scss:298 */
+div.fuel-list-item div {
+    display: inline-block;
+    height: 80px;
+    margin: 2px;
+    float: left;
+    /* width: 80px; */
+    color: black;
+    box-sizing: border-box;
+}
+/* http://localhost:1841/sass/etc/all.scss:312 */
+div.fuel-list-item div[data-type=cost] {
+    width: 90px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
+    padding: 10px 0px 10px 0px;
+}
+/* http://localhost:1841/sass/etc/all.scss:318 */
+div.fuel-list-item div[data-type=cost] p {
+    font-size: 1.8em;
+    text-align: center;
+    font-weight: bold;
+    margin: 5px 0;
+}
+/* http://localhost:1841/sass/etc/all.scss:328 */
+div.fuel-list-item div[data-type=rest] {
+    display: block;
+    padding: 10px 5px 10px 8px;
+}
+/* http://localhost:1841/sass/etc/all.scss:333 */
+div.fuel-list-item div[data-type=rest] p {
+    /* height: 100%; */
+    vertical-align: middle;
+}
+/* http://localhost:1841/sass/etc/all.scss:346 */
+.x-tab.x-tab-active {
+    /* ### fuellist ends ### */
+    /**
+ * CarViewport styling
+ */
+    color: #000 !important;
+    /* box-shadow: 0px 3px 0px; */
+    border: none;
+    border-bottom: 2px solid;
+    background-color: transparent !important;
+    border-color: #000 !important;
+}
+/* http://localhost:1841/sass/etc/all.scss:354 */
+.x-tab.x-iconalign-top.x-tab-icon.x-layout-box-item.x-stretched {
+    color: #000 !important;
+}
+/* http://localhost:1841/sass/etc/all.scss:358 */
+.x-tabbar {
+    background-color: transparent !important;
+}
+/* http://localhost:1841/sass/etc/all.scss:363 */
+.thumblistHeadRow {
+    /*********document styling ********/
+    height: 185px;
+    width: 155px;
+    margin: 10px;
+    float: left;
+    border: 12px solid #b57f3b;
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.98);
+}
+/* http://localhost:1841/sass/etc/all.scss:371 */
+.thumblistHeadRow img {
+    height: 100px;
+    width: 100px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+/* http://localhost:1841/sass/etc/all.scss:377 */
+.thumblistHeadRow figure {
+    margin: 0px;
+}
+/* http://localhost:1841/sass/etc/all.scss:380 */
+.thumblistHeadRow figcaption {
+    text-align: center;
+    font-size: 9pt;
+}
+/* http://localhost:1841/sass/etc/all.scss:384 */
+.thumblistHeadRow:hover {
+    background-color: #f5f6ce;
+}
+/* http://localhost:1841/sass/etc/all.scss:388 */
+.docList {
+    background: transparent !important;
+    border: none !important;
+    height: 0 !important;
+}
+/* http://localhost:1841/sass/etc/all.scss:397 */
+.img-view {
+    /*******End Doc********/
+    /*******Document Pic View *************************/
+    background-size: 100% 100% !important;
 }
 /* http://localhost:1841/ext/packages/core/sass/src/util/SizeMonitor.scss:5 */
 .x-size-monitored {
