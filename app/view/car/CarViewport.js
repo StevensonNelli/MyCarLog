@@ -4,7 +4,8 @@ Ext.define('MyCarLog.view.car.CarViewport', {
         'Ext.dataview.List',
         'MyCarLog.view.car.documents.Document',
         'MyCarLog.view.car.fuel.List',
-        'MyCarLog.view.car.services.List'
+        'MyCarLog.view.car.services.List',
+        'MyCarLog.view.car.reports.Report'
     ],
     alias: 'widget.carviewport',
     xtype: 'carviewport',
@@ -50,12 +51,18 @@ Ext.define('MyCarLog.view.car.CarViewport', {
             iconCls: 'x-fa fa-book',
             //html: 'Documents',
             items: [{
-                xtype: 'document'
+                xtype: 'document',
+                reference: 'documentsview'
             }]
         }, {
             title: 'Report',
             iconCls: 'x-fa fa-file',
-            html: 'Reports'
-        }]
+            items: [{
+                xtype:'report'
+            }]
+        }],
+        listeners:{
+            activeitemchange:'OnCarViewPortChange'
+        }
     }
 });

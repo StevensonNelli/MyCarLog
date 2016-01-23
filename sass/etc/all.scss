@@ -310,14 +310,15 @@ div.fuel-list-item div[data-type=cost] {
 }
 
 div.fuel-list-item div[data-type=rest] {
-    display: block;
-    // height: 80px;
-    padding: 10px 5px 10px 8px;
-    // box-sizing: border-box;
-    p {
-        /* height: 100%; */
-        vertical-align: middle;
-    }
+   display: block;
+   // height: 80px;
+   padding: 10px 5px 10px 8px;
+   max-width: 72%;
+   // box-sizing: border-box;
+   p {
+       /* height: 100%; */
+       vertical-align: middle;
+   }
 }
 
 
@@ -381,3 +382,123 @@ div.fuel-list-item div[data-type=rest] {
 .img-view{
       background-size: 100% 100% !important;
 }
+/**********************end********************/
+
+/************************Phani K changes ******************/
+
+.picture-capture{
+  @include background-image(linear-gradient(#57482b,#6F6044));
+  @include border-radius(10px);
+  @include box-shadow(inset 0px 1px 1px #57482b);
+
+  border-width:1px;
+  overflow: hidden;
+  margin:20px auto;
+
+  input{
+      border: 0;
+      position: absolute;
+      cursor: pointer;
+      top: -2px;
+      right: -2px;
+      filter: alpha(opacity=0);
+      opacity: 0;
+      font-size: 1000px;
+  }
+
+  img{
+      position: absolute;
+      @include border-radius(3px);
+      width: 100%;
+      height: 100%;
+      display:none;
+  }
+
+  .icon{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      color:#fff;
+      text-align: center;
+      font-size: 0.8em;
+      i{
+          display:block;
+          margin:8px;
+          font-size: 3.5em;;
+          color:#F4E5C2;
+      }
+  }
+}
+
+.appenabled{
+  background-image: url(../temImages/progressAppLite1.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-top: -3px;
+  color: #fff;
+  height: 89%;
+  z-index: 10;
+  display: inline-block;
+  position: relative;
+  width: 16%;
+}
+
+
+.inputmode,.outputmode{
+    height:100%;
+    width:100%;
+    display:none;
+}
+
+.input .inputmode{
+    display:block;
+}
+
+.output .outputmode{
+    display:block;
+}
+
+.outputimage{
+    display:block !important;
+    height:100% !important;
+    width:100% !important;
+}
+
+/***************************** end *****************************/
+
+/*************** Forms Styling **********************************/
+
+.x-form-inner{
+background-color:transparent !important;
+background-image:url(images/old-parchment.jpg); 
+}
+
+.x-field,.x-input-el,.x-toolbar{
+background-color:transparent !important;
+   border: 1px solid #6F6044;
+   border-radius: 10px;
+}
+
+
+::-webkit-input-placeholder {
+   color:    #57482b;
+}
+:-moz-placeholder {
+   color:    #57482b;
+}
+::-moz-placeholder {
+   color:    #57482b;
+}
+:-ms-input-placeholder {
+   color:    #57482b;
+}
+
+.x-form-label{
+background-color:transparent !important ;
+}
+
+.x-item-disabled .x-form-label,.x-item-disabled input, .x-item-disabled .x-input-el {
+   color: #6D6464 !important;
+}
+
+/*********************** end **********************************/

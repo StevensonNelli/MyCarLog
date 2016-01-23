@@ -1,2 +1,2 @@
 // @tag full-page
-// @require /var/www/html/steven/HackathonApps/MyCarLog_New/app.js
+// @require /var/www/html/steven/HackathonApps/MyCarLog-Git/app.js

@@ -1,12 +1,11 @@
 <!DOCTYPE HTML>
 <html manifest="cache.appcache">
+
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
     <title>MyCarLog</title>
-
     <!--
     <script type="text/javascript">
         var Ext = Ext || {}; // Ext namespace won't be defined yet...
@@ -45,7 +44,6 @@
         };
     </script>
     -->
-    
     <!-- The line below must be kept intact for Sencha Cmd to build your application -->
     <script id="microloader" data-app="cb8f4b92-a3c9-4e38-aca1-c3a56e46f739" type="text/javascript">var Ext=Ext||{};Ext.manifest=Ext.manifest||"app.json";Ext=Ext||{};
 Ext.Boot=Ext.Boot||function(e){function l(a){if(a.$isRequest)return a;a=a.url?a:{url:a};var m=a.url;w(a,{urls:m.charAt?[m]:m,charset:a.charset||b.config.charset});w(this,a)}function t(a){if(a.$isEntry)return a;var m=a.charset||b.config.charset,d=Ext.manifest,d=d&&d.loader,h=void 0!==a.cache?a.cache:d&&d.cache,c;b.config.disableCaching&&(void 0===h&&(h=!b.config.disableCaching),!1===h?c=+new Date:!0!==h&&(c=h),c&&(d=d&&d.cacheParam||b.config.disableCachingParam,c=d+"\x3d"+c));w(a,{charset:m,buster:c,
@@ -100,10 +98,9 @@ function(a){return function(b){c.onFullAssetUpdateLoaded(a,b)}}(b)):"delta"===b.
 c.updatedAssets.push(b)):b.uncache()}catch(f){l("Error parsing delta patch for "+b.assetConfig.path+" with hash "+a.assetConfig.hash+" . This asset will be uncached for future loading"),b.uncache()}if(0===c.remainingUpdatingAssets)c.onAllUpdatedAssetsReady()},onAllUpdatedAssetsReady:function(){var b;c.updatedAssetsReady=!0;if(c.updatedManifest){for(;0<c.removedAssets.length;)b=c.removedAssets.pop(),b.uncache();for(c.updatedManifest&&c.updatedManifest.cache();0<c.updatedAssets.length;)b=c.updatedAssets.pop(),
 b.cache()}c.notifyUpdateReady()},notifyUpdateReady:function(){if("checking"!==c.appCacheState&&c.updatedAssetsReady&&("updated"===c.appCacheState||c.updatedManifest))c.appUpdate={updated:!0,app:"updated"===c.appCacheState,manifest:c.updatedManifest&&c.updatedManifest.exportContent()},c.fireAppUpdate()},fireAppUpdate:function(){Ext.GlobalEvents&&Ext.defer(function(){Ext.GlobalEvents.fireEvent("appupdate",c.appUpdate)},100)},checksum:function(b,a){if(!b||!a)return!1;var c=!0,d=a.length,e=b.substring(0,
 1);"/"==e?b.substring(2,d+2)!==a&&(c=!1):"f"==e?b.substring(10,d+10)!==a&&(c=!1):"."==e&&b.substring(1,d+1)!==a&&(c=!1);return c},parseResult:function(b){var a={};(b.exception||0===b.status)&&!e.env.phantom?a.error=!0:200<=b.status&&300>b.status||304===b.status||e.env.phantom||0===b.status&&0<b.content.length?a.content=b.content:a.error=!0;return a}};return c}();Ext.manifest=Ext.manifest||"bootstrap";Ext.Microloader.run();</script>
-
 </head>
-<body>
 
+<body>
     <!-- templates -->
     <script type="text/template" id="carslist_itemtpl">
         <div class="car">
@@ -114,59 +111,95 @@ b.cache()}c.notifyUpdateReady()},notifyUpdateReady:function(){if("checking"!==c.
                 <span class="odometer">
                     <span class="digit">
                         <span>{mrd1}</span>
-                        <hr />
-                    </span><span class="digit">
+                <hr />
+                </span><span class="digit">
                         <span>{mrd2}</span>
-                        <hr />
-                    </span>
-                    <span class="digit">
+                <hr />
+                </span>
+                <span class="digit">
                         <span>{mrd3}</span>
-                        <hr />
-                    </span>
-                    <span class="digit">
+                <hr />
+                </span>
+                <span class="digit">
                         <span>{mrd4}</span>
-                        <hr />
-                    </span>
-                    <span class="digit">
+                <hr />
+                </span>
+                <span class="digit">
                         <span>{mrd5}</span>
-                        <hr />
-                    </span>
-                    <span class="digit">
+                <hr />
+                </span>
+                <span class="digit">
                         <span>{mrd6}</span>
-                        <hr />
-                    </span>
-                </span>        
+                <hr />
+                </span>
+                </span>
             </div>
         </div>
         <div class="clear"></div>
         <div class="actions"></div>
     </script>
+    <!-- Template for the fuel filling details list -->
+    <script type="text/template" id="fuellist_itemtpl">
+        <div class="fuel-list-item">
+            <div data-type="cost">
+                <p>
+                    {fillCost}
+                </p>
+                <span>Fill Cost</span>
+            </div>
+            <div data-type="rest">
+                <p>
+                    Litres: <strong>{litres}</strong>
+                    <br/> Current Reading: <strong>{reading}</strong>
+                    <br/> On: <strong>{date}</strong>
+                </p>
+            </div>
+        </div>
+    </script>
+    <!-- Template for the services details list -->
+    <script type="text/template" id="serviceslist_itemtpl">
+        <div class="fuel-list-item">
+            <div data-type="cost">
+                <p>
+                    {serviceCost}
+                </p>
+                <span>Cost</span>
+            </div>
+            <div data-type="rest">
+                <p>
+                    {shortdescription}
+                    <br/> On: <strong>{date}</strong>
+                </p>
+            </div>
+        </div>
+    </script>
     <script type="text/template" id="odometer">
         <span class="odometer">
             <span class="digit">
                 <span>{mrd1}</span>
-                <hr />
-            </span><span class="digit">
+        <hr />
+        </span><span class="digit">
                 <span>{mrd2}</span>
-                <hr />
-            </span>
-            <span class="digit">
+        <hr />
+        </span>
+        <span class="digit">
                 <span>{mrd3}</span>
-                <hr />
-            </span>
-            <span class="digit">
+        <hr />
+        </span>
+        <span class="digit">
                 <span>{mrd4}</span>
-                <hr />
-            </span>
-            <span class="digit">
+        <hr />
+        </span>
+        <span class="digit">
                 <span>{mrd5}</span>
-                <hr />
-            </span>
-            <span class="digit">
+        <hr />
+        </span>
+        <span class="digit">
                 <span>{mrd6}</span>
-                <hr />
-            </span>
+        <hr />
+        </span>
         </span>
     </script>
 </body>
+
 </html>

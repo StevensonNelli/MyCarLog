@@ -8,22 +8,34 @@ Ext.define('MyCarLog.view.main.MainController', {
     extend: 'Ext.app.ViewController',
 
     alias: 'controller.main',
-
+    requires:[
+        'MyCarLog.view.forms.AddCar',
+        'MyCarLog.view.forms.FuelForm',
+        'MyCarLog.view.forms.MaintenanceForm',
+        'MyCarLog.view.forms.DocumentForm'
+    ],
     control: {
         'app-main': {
             'initialize': 'onMainInit',
-            'activeitemchange': 'onActiveItemChange'
+            'activeitemchange': 'onActiveItemChange',
+                    'savemnt':'saveMaintenanceForm',
+                    'savecar':'saveCarForm',
+                    'savedoc':'saveDocumentForm',
+                    'savefuel':'saveFuelForm'
         },
+
         'carslist list': {
             'itemtap': 'onCarslistItemTap',
             'refresh': 'onCarslistRefresh'
         },
-        'caractionmenu #addFuel': {
-            'click': function() {
-                console.log(arguments);
+        'caractionmenu ': {
+            'addfuel':'showFuelForm',
+                    'addmaint':'showMaintenaceFrom',
+                    'adddocument':'showDocumentForm'
+                    
+        },
                 
-            },
-        }
+
     },
 onDocumentClick:function(list, index, target, record, e, eOpts){
     var docform = Ext.create('MyCarLog.view.car.documents.DocumentPic',{});
@@ -116,46 +128,49 @@ onDocumentClick:function(list, index, target, record, e, eOpts){
 
     /* CarsList view */
     onCarslistItemTap: function(dataview, index, target, record, e, eOpts) {
-        var me = this;
-        var isSelected = Ext.isEmpty(dataview.getSelection());
-        var car = record;
+       var me = this;
+       var isSelected = Ext.isEmpty(dataview.getSelection());
+       var car = record;
 
-        var hit = Ext.getCmp(e.target.id) || Ext.getCmp(e.target.parentElement.id);
-        if (Boolean(hit)) {
-            var actions = ['addFuel', 'addMaintenance', 'addDoc', 'editCar', 'deleteCar'];
-            var actionHit = hit.getItemId().split('_')[0];
-            console.log('car: ', car.getData());
-            switch (actionHit) {
-                case actions[0]:
-                    // TODO show add fuel form
-                    console.log('action: ', actions[0]);
-                    break;
-                case actions[1]:
-                    // TODO show add maintenance form
-                    console.log('action: ', actions[1]);
-                    break;
-                case actions[2]:
-                    // TODO show add doc form
-                    console.log('action: ', actions[2]);
-                    break;
-                case actions[3]:
-                    // TODO show add car form with the present details
-                    console.log('action: ', actions[3]);
-                    break;
-                case actions[4]:
-                    // TODO delete the car record
-                    console.log('action: ', actions[4]);
-                    me.deleteCar(car);
-                    break;
-                default:
-                    // TODO switch to car viewport
-                    me.switchToCarViewport(car);
-            }
-        } else {
-            // TODO switch to car viewport
-            me.switchToCarViewport(car);
-        }
-    },
+       var hit = Ext.getCmp(e.target.id) || Ext.getCmp(e.target.parentElement.id);
+       if (Boolean(hit)) {
+           var actions = ['addFuel', 'addMaintenance', 'addDoc', 'editCar', 'deleteCar'];
+           var actionHit = hit.getItemId().split('_')[0];
+           console.log('car: ', car.getData());
+           switch (actionHit) {
+               case actions[0]:
+                   // TODO show add fuel form
+                   console.log('action: ', actions[0]);
+me.showFuelForm();
+                   break;
+               case actions[1]:
+                   // TODO show add maintenance form
+                   console.log('action: ', actions[1]);
+me.showMaintenaceFrom();
+                   break;
+               case actions[2]:
+                   // TODO show add doc form
+                   console.log('action: ', actions[2]);
+me.showDocumentForm();
+                   break;
+               case actions[3]:
+                   // TODO show add car form with the present details
+                   console.log('action: ', actions[3]);
+                   break;
+               case actions[4]:
+                   // TODO delete the car record
+                   console.log('action: ', actions[4]);
+                   me.deleteCar(car);
+                   break;
+               default:
+                   // TODO switch to car viewport
+                   me.switchToCarViewport(car);
+           }
+       } else {
+           // TODO switch to car viewport
+           me.switchToCarViewport(car);
+       }
+   },
     onCarslistRefresh: function() {
         function renderBtn(querySelector) {
             var renderSelector = Ext.query(querySelector);
@@ -186,12 +201,12 @@ onDocumentClick:function(list, index, target, record, e, eOpts){
                         ui: 'plain',
                         itemId: 'addDoc_' + i,
                         cls: 'fab-plain'
-                    }, {
+                    }, /*{
                         iconCls: 'x-fa fa-pencil',
                         ui: 'plain',
                         itemId: 'editCar_' + i,
                         cls: 'fab-plain'
-                    }, {
+                    },*/ {
                         iconCls: 'x-fa fa-trash',
                         ui: 'plain',
                         itemId: 'deleteCar_' + i,
@@ -208,15 +223,24 @@ onDocumentClick:function(list, index, target, record, e, eOpts){
         // renderBtn('span.delete-car', 'x-fa fa-remove');
         renderBtn('div.actions');
     },
+   
     backToCarsList: function() {
-        console.log('backToCarsList');
-        var card = this.getView();
-        var anim = card.getLayout().getAnimation();
+       console.log('backToCarsList');
+       var card = this.getView();
+       var anim = card.getLayout().getAnimation();
 
-        anim.setDirection('right');
-        card.setActiveItem(1);
-        anim.setDirection('left');
-    },
+       // removing filter to stores
+       var fuel = this.lookupReference('fuellist').getStore();
+       fuel.removeFilter();
+       var serv = this.lookupReference('serviceslist').getStore();
+       serv.removeFilter();
+       var docs = this.lookupReference('documentsview').down('list').getStore();
+       docs.removeFilter();
+
+       anim.setDirection('right');
+       card.setActiveItem(1);
+       anim.setDirection('left');
+   },
     fabAction: function() {
         // debugger;
         var main = this.getView();
@@ -224,6 +248,8 @@ onDocumentClick:function(list, index, target, record, e, eOpts){
         if(activeXtype === "carslist") {
             // TODO show add car form
             console.log('TODO show add car form');
+                        var form = Ext.create('MyCarLog.view.forms.AddCar',{});
+                        Ext.Viewport.add(form);
         } else {
             // TODO show actinsheet
             var actionSheet = main.down('caractionmenu');
@@ -233,10 +259,20 @@ onDocumentClick:function(list, index, target, record, e, eOpts){
 
     /* General Functions */
     switchToCarViewport: function(car) {
-        console.log('switchToCarViewport');
-        console.log('selected car: ', this.getViewModel().getData().carSelected);
-        this.getView().setActiveItem(2);
-    },
+       console.log('switchToCarViewport');
+       console.log('selected car: ', this.getViewModel().getData().carSelected);
+       // add filter to stores
+       var fuel = this.lookupReference('fuellist').getStore();
+       fuel.addFilter({property: 'carId', value: car.data.id});
+       var serv = this.lookupReference('serviceslist').getStore();
+       serv.addFilter({property: 'carId', value: car.data.id});
+       var docs = this.lookupReference('documentsview').down('list').getStore();
+       docs.addFilter({property: 'carId', value: car.data.id});
+
+       // setting carviewport as active item
+       this.getView().setActiveItem(2);
+   },
+
     deleteCar: function(car) {
         Ext.Msg.confirm('', 'Do you really want to remove the selected car?', _confirmCB.bind(this));
 
@@ -250,4 +286,49 @@ onDocumentClick:function(list, index, target, record, e, eOpts){
             }
         }
     },
+    showFuelForm:function(){
+            var form = Ext.create('MyCarLog.view.forms.FuelForm',{
+                lastFillingDate:new Date('2016-01-01'),
+                lastFillMeterReading:1000,
+                costPerLiter:49,
+                favCost:1000,
+                dailAvgKms:10
+            });
+            Ext.Viewport.add(form);
+        },
+        showMaintenaceFrom:function(){
+            var form = Ext.create('MyCarLog.view.forms.MaintenanceForm',{
+            });
+            Ext.Viewport.add(form);
+        },
+        showDocumentForm:function(){
+            var form = Ext.create('MyCarLog.view.forms.DocumentForm',{
+            });
+            Ext.Viewport.add(form);
+        },
+        saveCarForm:function(form){
+            console.log('saveform');
+                        form.destroy();
+        },
+        saveMaintenanceForm:function(form){
+            console.log('savemnt form');
+                        form.destroy();
+        },
+        saveDocumentForm:function(form){
+            console.log('save doc form');
+            form.destroy();
+        },
+        saveFuelForm:function(form){
+            console.log('save fuel form');
+            form.destroy();
+        },
+    OnCarViewPortChange:function( tab, value, oldValue, eOpts){
+        if(value.title == "Report"){
+            this.lookupReference('fabBack').hide();
+            this.lookupReference('fabAdd').hide();
+        }else{
+            this.lookupReference('fabBack').show();
+            this.lookupReference('fabAdd').show();
+        }
+    }
 });

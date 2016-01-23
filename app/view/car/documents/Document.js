@@ -22,7 +22,7 @@ Ext.define('MyCarLog.view.car.documents.Document', {
 	    },
 	    itemCls :'docList',
 	    itemTpl: [
-	    '<span class="thumblistHeadRow"><figure ><img src="resources/images/doc{id}.jpg" /><figcaption>{make}<br/>{date:date} | {nickname} </figcaption></figure></span>'
+	    '<span class="thumblistHeadRow"><figure ><img src="resources/images/doc{id}.jpg" /><figcaption>{doctitle}<br/>{date}</figcaption></figure></span>'
 	        // '<div class="car">',
 	        // '<img src="{image}">',
 	        // '<div class="info">',

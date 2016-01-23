@@ -10,14 +10,23 @@ Ext.define('MyCarLog.view.main.ActionMenu', {
     items: [{
         text: 'Add Fuel filling',
         iconCls: 'x-fa fa-flask',
-        itemId: 'addFuel'
+        itemId: 'addFuel',
+				handler:function(){
+					this.up('actionsheet').fireEvent('addfuel');
+				}
     }, {
         text: 'Add Maintenance',
         iconCls: 'x-fa fa-gears',
-        itemId: 'addMaintenance'
+        itemId: 'addMaintenance',
+				handler:function(){
+					this.up('actionsheet').fireEvent('addmaint');
+				}
     }, {
         text: 'Upload Document',
         iconCls: 'x-fa fa-file-text',
-        itemId: 'addDoc'
+        itemId: 'addDoc',
+				handler:function(){
+					this.up('actionsheet').fireEvent('adddocument');
+				}
     }]
 });

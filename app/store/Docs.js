@@ -4,7 +4,7 @@ Ext.define('MyCarLog.store.Docs', {
     alias: 'store.docs',
 
     fields: [
-        'id', 'doctitle', 'image', 'date'
+        'id', 'doctitle', 'image', 'date','carId'
     ],
 
     proxy: {
