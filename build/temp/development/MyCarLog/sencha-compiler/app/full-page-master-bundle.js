@@ -1,2 +1,2 @@
 // @tag full-page
-// @require /var/www/html/ideasHackathon/NEW/MyCarLog4/app.js
+// @require G:\Extjs-Projects\mycarlog\app.js

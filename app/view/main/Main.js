@@ -27,12 +27,13 @@ Ext.define('MyCarLog.view.main.Main', {
         fullscreen: true,
         layout: {
             type: 'card',
-            activeitem: 0,
+           
             animation: {
                 type: 'slide',
                 direction: 'left'
             }
         },
+        activeitem: 0,
         cls: 'main',
         items: [{
             xtype: 'welcome',
