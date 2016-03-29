@@ -6,10 +6,25 @@ Ext.define('MyCarLog.view.main.MainModel', {
 
     alias: 'viewmodel.main',
 
+    requires: [
+        'MyCarLog.store.CarsMeta',
+        'MyCarLog.store.Cars'
+    ],
+
     data: {
         name: 'MyCarLog',
         carSelected: null,
         filter: null
+    },
+
+    stores: {
+        /**
+         * Store with the meta data of cars
+         */
+        carsmeta: {
+            type: 'carsmeta',
+            autoLoad: true
+        }
     }
 
     //TODO - add data, formulas and/or methods to support your view

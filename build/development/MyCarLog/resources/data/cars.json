@@ -6,7 +6,8 @@
         "model": "Z4 Roadster",
         "fuelType": "diesel",
         "image": "resources/images/Z4.jpg",
-        "currentMeterReading": 1000
+        "initialMeterReading": 1000,
+        "currentMeterReading": 1500
     }, {
         "id": 2,
         "make": "Bugatti",
@@ -14,6 +15,7 @@
         "model": "Veyron Grand Sport",
         "fuelType": "petrol",
         "image": "resources/images/VeyronGS.jpg",
-        "currentMeterReading": 108560
+        "initialMeterReading": 108560,
+        "currentMeterReading": 118000
     }
 ]

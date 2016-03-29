@@ -30,9 +30,12 @@
     .x-button {
         background-color: rgba(0, 0, 0, 0);
         border: none;
+        color: #ffffff;
     }
     .x-button-pressing {
-        background-color: #d6d6d6;
+        //background-color: #d6d6d6;
+        background-color: rgba(142, 142, 142, 0.3);
+        color: #F5F5F5;
     }
     .x-button-label {
         text-align: right;
@@ -60,30 +63,80 @@
     background-color: #E9CB87;
 }
 
+
 /**
  * carslist view 
  */
+
 .carlist {
     .x-toolbar h2 {
         font-size: 250%;
         font-weight: 400;
     }
+    .car {
+        img {
+            height: 80px;
+            // width: 30%;
+            float: left;
+        }
+        div.info {
+            float: left;
+            margin-left: 10px;
+        }
+        div.info h2 {
+            font-size: 180%;
+            margin-bottom: 5px;
+            /*line-height: 100px;*/
+        }
+    }
+    .x-list-item {
+        width: 95% !important;
+        //display: inline-block;
+        padding: 5px;
+        margin: 10px auto;
+        border: none !important;
+        //text-align: center;
+        transition: all 0.2s ease-in-out;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        background: rgba(255, 255, 255, 0.3);
+    }
+    .x-list-item.x-item-selected {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        //background: rgba(234, 207, 155, 0.7);
+        background: rgba(255,239,187,0.8) !important;
+    }
 }
 
-.x-list-item > .x-innerhtml .car {
-    img {
-        height: 80px;
-        // width: 30%;
-        float: left;
+.mcl-tablet .carlist {
+    .x-dataview-item {
+        max-width: 250px;
+        vertical-align: top;
+        display: inline-block;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        background: rgba(255, 255, 255, 0.3);
     }
-    div.info {
-        float: left;
-        margin-left: 10px;
+    .x-dataview-item.x-item-selected {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        // background: rgba(234, 207, 155, 0.7);
+        background: rgba(255,239,187,0.8);
     }
-    div.info h2 {
-        font-size: 180%;
-        margin-bottom: 5px;
-        /*line-height: 100px;*/
+    .car img {
+        height: 140px;
+        /* float: left; */
+        /* position: absolute; */
+        /* margin: 0 auto; */
+    }
+    .car div.info {
+        float: none;
+        margin-left: 0px;
+        div.odometer-wrapper {
+            width: 132.4px;
+            margin: 5px auto;
+        }
     }
 }
 
@@ -156,55 +209,76 @@ span.odometer {
     }
 }
 
-.x-big {
-    .clear {
-        clear: both;
-    }
-    .x-button {
-        color: #F4E5C2;
-        background-color: #57482B;
-        border: none;
-    }
-    .x-container.x-toolbar.x-stretched.x-dock-item.x-docked-top {
-        /*background-color: rgba(194, 170, 113, 0.82);*/
-        background: none;
-        height: 60px;
-    }
-    /* floating button */
-    .fab-btn {
-        position: fixed;
-        bottom: 15px;
-        right: 15px;
-        // font-size: 150%;
-        color: #F4E3BE;
-        border: 1px solid #967D4E;
-        // box-shadow: 0px 0px 9px rgba(99, 74, 2, 0.98);
-        box-shadow: 1px 2px 15px 0px rgba(99, 74, 2, 0.6), 0px -1px 15px 0px rgba(99, 74, 2, 0.5)
-    }
-    .fab-btn.x-button .x-button-icon {
-        width: auto;
-    }
-    .fab-back {
-        right: 85px;
-    }
-    .fab.x-button {
-        padding: 0;
-    }
+.clear {
+    clear: both;
+}
+
+.x-button {
+    color: #F4E5C2;
+    background-color: #57482B;
+    border: none;
+}
+
+.x-container.x-toolbar.x-stretched.x-dock-item.x-docked-top {
+    /*background-color: rgba(194, 170, 113, 0.82);*/
+    background: none;
+    height: 60px;
+}
+
+
+/* floating button */
+
+.fab-btn {
+    position: absolute !important;
+    // position: fixed;
+    bottom: 15px;
+    right: 15px;
+    // font-size: 150%;
+    //color: #F4E3BE;
+    // border: 1px solid #967D4E;
+    // box-shadow: 0px 0px 9px rgba(99, 74, 2, 0.98);
+    box-shadow: 1px 2px 15px 0px rgba(99, 74, 2, 0.6), 0px -1px 15px 0px rgba(99, 74, 2, 0.5);
+    color: #f4e5c2 !important;
+    background-color: #57482b !important;
+    border: none !important;
+}
+
+.fab-btn.x-button .x-button-icon {
+    width: auto;
+}
+
+.fab-back {
+    right: 85px;
+}
+
+.fab.x-button {
+    padding: 0;
 }
 
 .fab-plain.x-button {
     color: #57482B;
+    border-radius: 50% !important;
+    height: 36px !important;
+    width: 36px !important;
+    padding: 0px !important;
+    margin: 3px !important;
     // height: 
 }
 
 .x-button.fab-plain .x-button-icon {
-    line-height: 0.7em;
+    //line-height: 0.7em;
+    line-height: 0.9em;
+}
+
+.fab.fab-btn.x-button-pressing {
+    color: #57482b !important;
+    background-color: #f4e5c2 !important;
 }
 
 .fab-plain.x-button-plain.x-button-pressing {
-    color: #000;
-    background: #CDB076;
-    border-radius: 50px;
+    color: #000 !important;
+    background: #CDB076 !important;
+    //border-radius: 50px !important;
 }
 
 .welcome-cls {
@@ -312,15 +386,15 @@ div.fuel-list-item div[data-type=cost] {
 }
 
 div.fuel-list-item div[data-type=rest] {
-   display: block;
-   // height: 80px;
-   padding: 10px 5px 10px 8px;
-   max-width: 72%;
-   // box-sizing: border-box;
-   p {
-       /* height: 100%; */
-       vertical-align: middle;
-   }
+    display: block;
+    // height: 80px;
+    padding: 10px 5px 10px 8px;
+    max-width: 72%;
+    // box-sizing: border-box;
+    p {
+        /* height: 100%; */
+        vertical-align: middle;
+    }
 }
 
 
@@ -330,24 +404,28 @@ div.fuel-list-item div[data-type=rest] {
 /**
  * CarViewport styling
  */
+
 .x-tab.x-tab-active {
-  color: #000000 !important;
-  /* box-shadow: 0px 3px 0px; */
-  border: none;
-  border-bottom: 2px solid;
-  background-color: rgba(0,0,0,0) !important;
-  border-color: #000 !important;
+    color: #000000 !important;
+    /* box-shadow: 0px 3px 0px; */
+    border: none;
+    border-bottom: 2px solid;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-color: #000 !important;
 }
+
 .x-tab.x-iconalign-top.x-tab-icon.x-layout-box-item.x-stretched {
     color: #000 !important;
 }
 
 .x-tabbar {
-  background-color: rgba(0,0,0,0) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
 }
+
+
 /*********document styling ********/
 
-.thumblistHeadRow{
+.thumblistHeadRow {
     height: 185px;
     width: 155px;
     margin: 10px;
@@ -355,152 +433,190 @@ div.fuel-list-item div[data-type=rest] {
     border: 12px solid #B57F3B;
     box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.98);
 }
+
 .thumblistHeadRow img {
     height: 100px;
     width: 100px;
     margin-left: 15px;
     margin-top: 15px;
 }
+
 .thumblistHeadRow figure {
     margin: 0px;
 }
+
 .thumblistHeadRow figcaption {
     text-align: center;
     font-size: 9pt;
 }
-.thumblistHeadRow:hover  {
-    
+
+.thumblistHeadRow:hover {
     background-color: #F5F6CE;
 }
-.docList{
-      background: rgba(0, 0, 0, 0) !important;
+
+.docList {
+    background: rgba(0, 0, 0, 0) !important;
     border: none !important;
     height: 0 !important;
 }
 
+
 /*******End Doc********/
 
+
 /*******Document Pic View *************************/
-.img-view{
-      background-size: 100% 100% !important;
+
+.img-view {
+    background-size: 100% 100% !important;
 }
+
+
 /**********************end********************/
+
 
 /************************Phani K changes ******************/
 
-.picture-capture{
-  @include background-image(linear-gradient(#57482b,#6F6044));
-  @include border-radius(10px);
-  @include box-shadow(inset 0px 1px 1px #57482b);
-
-  border-width:1px;
-  overflow: hidden;
-  margin:20px auto;
-
-  input{
-      border: 0;
-      position: absolute;
-      cursor: pointer;
-      top: -2px;
-      right: -2px;
-      filter: alpha(opacity=0);
-      opacity: 0;
-      font-size: 1000px;
-  }
-
-  img{
-      position: absolute;
-      @include border-radius(3px);
-      width: 100%;
-      height: 100%;
-      display:none;
-  }
-
-  .icon{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      color:#fff;
-      text-align: center;
-      font-size: 0.8em;
-      i{
-          display:block;
-          margin:8px;
-          font-size: 3.5em;;
-          color:#F4E5C2;
-      }
-  }
+.picture-capture {
+    @include background-image(linear-gradient(#57482b, #6F6044));
+    @include border-radius(10px);
+    @include box-shadow(inset 0px 1px 1px #57482b);
+    border-width: 1px;
+    overflow: hidden;
+    margin: 20px auto;
+    input {
+        border: 0;
+        position: absolute;
+        cursor: pointer;
+        top: -2px;
+        right: -2px;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        font-size: 1000px;
+    }
+    img {
+        position: absolute;
+        @include border-radius(3px);
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    .icon {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        text-align: center;
+        font-size: 0.8em;
+        i {
+            display: block;
+            margin: 8px;
+            font-size: 3.5em;
+            ;
+            color: #F4E5C2;
+        }
+    }
 }
 
-.appenabled{
-  background-image: url(../temImages/progressAppLite1.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  margin-top: -3px;
-  color: #fff;
-  height: 89%;
-  z-index: 10;
-  display: inline-block;
-  position: relative;
-  width: 16%;
+.appenabled {
+    background-image: url(../temImages/progressAppLite1.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-top: -3px;
+    color: #fff;
+    height: 89%;
+    z-index: 10;
+    display: inline-block;
+    position: relative;
+    width: 16%;
 }
 
-
-.inputmode,.outputmode{
-    height:100%;
-    width:100%;
-    display:none;
+.inputmode,
+.outputmode {
+    height: 100%;
+    width: 100%;
+    display: none;
 }
 
-.input .inputmode{
-    display:block;
+.input .inputmode {
+    display: block;
 }
 
-.output .outputmode{
-    display:block;
+.output .outputmode {
+    display: block;
 }
 
-.outputimage{
-    display:block !important;
-    height:100% !important;
-    width:100% !important;
+.outputimage {
+    display: block !important;
+    height: 100% !important;
+    width: 100% !important;
 }
+
 
 /***************************** end *****************************/
 
+
 /*************** Forms Styling **********************************/
 
-.x-form-inner{
-background-color:transparent !important;
-background-image:url(images/old-parchment.jpg); 
+.x-form-inner {
+    background-color: transparent !important;
+    background-image: url(images/old-parchment.jpg);
 }
 
-.x-field,.x-input-el,.x-toolbar{
-background-color:transparent !important;
-   border: 1px solid #6F6044;
-   border-radius: 10px;
+.x-field,
+.x-input-el,
+.x-toolbar {
+    background-color: transparent !important;
+    border: 1px solid #6F6044;
+    border-radius: 10px;
 }
-
 
 ::-webkit-input-placeholder {
-   color:    #57482b;
+    color: #57482b;
 }
+
 :-moz-placeholder {
-   color:    #57482b;
+    color: #57482b;
 }
+
 ::-moz-placeholder {
-   color:    #57482b;
+    color: #57482b;
 }
+
 :-ms-input-placeholder {
-   color:    #57482b;
+    color: #57482b;
 }
 
-.x-form-label{
-background-color:transparent !important ;
+.x-form-label {
+    background-color: transparent !important;
 }
 
-.x-item-disabled .x-form-label,.x-item-disabled input, .x-item-disabled .x-input-el {
-   color: #6D6464 !important;
+.x-item-disabled .x-form-label,
+.x-item-disabled input,
+.x-item-disabled .x-input-el {
+    color: #6D6464 !important;
+}
+
+.mcl-form {
+    height: 100%;
+    width: 100%;
+    margin: 0 !important;
+    .x-form-inner {
+        padding: 10px;
+    }
+}
+
+.mcl-tablet {
+    .mcl-form {
+        height: 350px;
+        width: 450px;
+        background-color: #E8C47B !important;
+        border: none !important;
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+
+    .mcl-form.add-car {
+        height: 527px;        
+    }
 }
 
 /*********************** end **********************************/

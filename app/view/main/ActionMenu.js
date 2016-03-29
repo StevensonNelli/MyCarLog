@@ -3,7 +3,7 @@ Ext.define('MyCarLog.view.main.ActionMenu', {
     xtype: 'caractionmenu',
 
     defaults: {
-        textAlign: "right",
+        textAlign: 'right',
         iconAlign: 'right'
     },
 
@@ -28,5 +28,11 @@ Ext.define('MyCarLog.view.main.ActionMenu', {
 				handler:function(){
 					this.up('actionsheet').fireEvent('adddocument');
 				}
-    }]
+    }],
+
+    initialize: function() {
+        this.setZIndex(10);
+        this.setLeft( ( MyCarLog.deviceInfo.tablet ) ? 'auto' : 0 );
+        // this.callParent();
+    }
 });

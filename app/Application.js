@@ -8,6 +8,11 @@ Ext.define('MyCarLog.Application', {
     
     name: 'MyCarLog',
 
+    requires: [
+        'MyCarLog.util.Util',
+        'MyCarLog.util.FormLocalStorageUtil'
+    ],
+
     stores: [
         // TODO: add global / shared stores here
     ],

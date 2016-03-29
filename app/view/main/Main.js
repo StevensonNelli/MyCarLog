@@ -12,6 +12,12 @@ Ext.define('MyCarLog.view.main.Main', {
     requires: [
         'Ext.MessageBox',
 
+        'MyCarLog.model.CarMeta',
+        'MyCarLog.model.Car',
+        'MyCarLog.model.FuelFilling',
+        'MyCarLog.model.Service',
+        'MyCarLog.model.Doc',
+
         'MyCarLog.view.main.MainController',
         'MyCarLog.view.main.MainModel',
         'MyCarLog.view.list.CarsList',
@@ -52,7 +58,7 @@ Ext.define('MyCarLog.view.main.Main', {
             hidden: true
         }]
 
-        // listeners: {
+        // ,listeners: {
         //     'initialize': 
         //     // 'activeitemchange': 'onActiveItemChange'
         // }

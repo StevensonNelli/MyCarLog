@@ -8769,7 +8769,6 @@ Ext.ClassManager = (function(Class, alias, arraySlice, arrayFrom, global) {
             },
             
             create: function(className, data, createdFn) {
-                
                 if (className != null && typeof className !== 'string') {
                     throw new Error("[Ext.define] Invalid class name '" + className + "' specified, must be a non-empty string");
                 }

@@ -62,7 +62,7 @@ Ext.define('MyCarLog.view.car.CarViewport', {
             }]
         }],
         listeners:{
-            activeitemchange:'OnCarViewPortChange'
+            activeitemchange:'onCarViewPortChange'
         }
     }
 });
